@@ -32,7 +32,7 @@ public class Player extends Thread {
         boolean gotResults = false;
         while (!gotResults) {
             switch (waitOnInput()) {
-                case "n" -> {
+                case "n" : {
                     gotResults = true;
                     int id = Server.games.newGame();
                     init(Server.games.getGame(id));
@@ -41,15 +41,15 @@ public class Player extends Thread {
                                     "You joined game [%s]. Waiting for an opponent", id), false
                     );
                 }
-                case "j" -> {
+                case "j" : {
                     gotResults = true;
                     askForId();
                 }
-                case "e" -> {
+                case "e" : {
                     gotResults = true;
                     exitClient();
                 }
-                default -> sendMessage("Incorrect Input", true);
+                default : sendMessage("Incorrect Input", true);
             }
         }
 

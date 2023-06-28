@@ -57,8 +57,10 @@ public class Game {
             case 3 : sums[5][x]++;
         }
         switch (new String(col + row)) {
-            case "A1", "C3" : sums[6][x]++;
-            case "A3", "C1" : sums[7][x]++;
+            case "A1" : sums[6][x]++;
+            case "C3" : sums[6][x]++;
+            case "A3" : sums[7][x]++;
+            case "C1" : sums[7][x]++;
             case "B2" : {
                 sums[6][x]++;
                 sums[7][x]++;
