@@ -6,7 +6,7 @@ public class Game {
     private List<String> xes;
     private List<String> os;
     private int[][] sums;
-    private static String[] abc = new String[] {"A", "B", "C"};
+    private static final String[] abc = new String[] {"A", "B", "C"};
 
     private String lastmove = "";
 
@@ -47,19 +47,19 @@ public class Game {
 
     private void updateWins(String col, int row, int x) {
         switch (col) {
-            case "A" -> sums[0][x]++;
-            case "B" -> sums[1][x]++;
-            case "C" -> sums[2][x]++;
+            case "A" : sums[0][x]++;
+            case "B" : sums[1][x]++;
+            case "C" : sums[2][x]++;
         }
         switch (row) {
-            case 1 -> sums[3][x]++;
-            case 2 -> sums[4][x]++;
-            case 3 -> sums[5][x]++;
+            case 1 : sums[3][x]++;
+            case 2 : sums[4][x]++;
+            case 3 : sums[5][x]++;
         }
         switch (new String(col + row)) {
-            case "A1", "C3" -> sums[6][x]++;
-            case "A3", "C1" -> sums[7][x]++;
-            case "B2" -> {
+            case "A1", "C3" : sums[6][x]++;
+            case "A3", "C1" : sums[7][x]++;
+            case "B2" : {
                 sums[6][x]++;
                 sums[7][x]++;
             }
